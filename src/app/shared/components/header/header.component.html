@@ -1,11 +1,10 @@
 <header>
-  <nav class="navbar navbar-expand-md navbar-light">
+  <nav class="navbar navbar-expand-md navbar-dark navbar-theme fixed-top">
     <div class="container">
-
-      <a href="#" class="navbar-brand">Organizer</a>
+      <a href="#" class="navbar-brand navbar-brand-color font-weight-bold">Organizer</a>
 
       <button
-        class="navbar-toggler"
+        class="navbar-toggler navbar-toggler-outline "
         type="button"
         data-toggle="collapse"
         data-target="#navbarText"
@@ -13,13 +12,12 @@
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <span class="navbar-toggler-icon"></span>
+        <span><i class="fas fa-bars text-light"></i></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarText">
-
-        <ul class="navbar-nav">
-          <li class="nav-item">
+      <div class="collapse navbar-collapse font-weight-bold" id="navbarText">
+        <ul class="navbar-nav  mr-auto">
+          <li class="nav-item active">
             <a class="nav-link" href="#">Tasks</a>
           </li>
           <li class="nav-item">
@@ -30,8 +28,13 @@
           </li>
         </ul>
 
-      </div>
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#"><i class="fas fa-power-off"></i> Logout</a>
+          </li>
+        </ul>
 
+      </div>
     </div>
   </nav>
 </header>

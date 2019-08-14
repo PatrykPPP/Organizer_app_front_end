@@ -1,3 +1,11 @@
-.navbar{
-  background-color: rgb(235, 103, 103);
+.navbar-theme{
+  background-color: #00c699;
+}
+
+.navbar-toggler-outline{
+  border-color: #fff;
+}
+
+.fa-bars-white{
+  color: #fff;
 }
