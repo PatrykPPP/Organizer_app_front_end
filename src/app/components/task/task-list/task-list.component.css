@@ -1,0 +1,25 @@
+.task-header{
+  height: 45px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.task-header:last-of-type{
+   border-bottom: 1px solid rgba(0, 0, 0, 0);
+}
+
+.task-title{
+  cursor: pointer;
+}
+
+.task-weather-icon{
+  height: 40px;
+}
+
+.task-weather-icon-img{
+  height: 100%;
+  width: auto;
+}
+
+.task-weather-temp{
+  padding: 10px 0;
+}
