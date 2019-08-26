@@ -1,3 +1,77 @@
 .task-add-text{
   color: #2F4F4F;
 }
+
+.task-add-form-header{
+  border-bottom: 0px;
+}
+
+.task-add-form-footer{
+  border-top: 0px;
+}
+
+.popup-task-add{
+    display: none;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.popup-task-add-container{
+    margin: 100px auto 0 auto;
+    max-width: 600px;
+}
+
+.popup-x{
+	display: flex;
+	justify-content: flex-end;
+}
+
+.popup-x-btn{
+	color: rgb(175, 175, 175);
+	font-size: 1.3rem;
+	cursor: pointer;
+}
+
+.popup-task-add-form{
+    max-width: 570px;
+    margin: 0 auto;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 10px 0.5px #cfcfcf;
+}
+
+.task-add-form-row{
+    margin-bottom: 5px;
+}
+
+.task-add-form-label{
+    color: rgb(126, 126, 126);
+}
+
+.task-add-title{
+    width: 100%;
+    border: 0;
+    outline: none;
+}
+
+.task-add-date-time{
+	border: 0;
+    outline: none;
+}
+
+.task-add-description{
+    height: 60px;
+    width: 100%;
+    border: 0;
+    outline: none;
+    resize: vertical;
+}
+
+.task-add-submit-container{
+    display: block;
+    height: 30px;
+    margin-bottom: 0;
+}

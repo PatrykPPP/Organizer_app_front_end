@@ -1,34 +1,39 @@
-<div class="accordion mt-2" id="accordionExample">
-  <div class="task-item">
-    <div class="task-header row align-items-center mb-2">
+<div class="accordion mt-2" id="accordion">
+  <div class="task-item pb-1 mb-1">
+    <div class="task-header row ">
       <div
-        class="col-6 row task-data-and-title"
+        class="task-main-data col-10 d-flex align-items-center"
         data-toggle="collapse"
         data-target="#collapseOne"
         aria-expanded="false"
         aria-controls="collapseOne"
         id="headingOne"
       >
-        <div class="col-2">
+        <div class="task-data-time pr-2 mr-2">
           <span>Day</span>
           <span>Data</span>
         </div>
-        <div class="col-10 task-title">
+        <div class="task-title mr-2">
           TaskTitle
         </div>
-      </div>
-      <div class="col-2 row">
-        <div class="px-0 task-weather-icon">
-          <img
-            class="task-weather-icon-img"
-            src="http://openweathermap.org/img/wn/01d@2x.png"
-            alt=""
-          />
+        <div class="d-flex">
+          <div class="px-0 task-weather-icon">
+            <img
+              class="task-weather-icon-img"
+              src="http://openweathermap.org/img/wn/01d@2x.png"
+              alt=""
+            />
+          </div>
+          <div class="task-weather-temp px-0">20 &#8451;</div>
         </div>
-        <div class="task-weather-temp px-0">20 &#8451;</div>
       </div>
-      <div class="col-4">
-        Buttons
+      <div class="col-2 d-flex align-items-center justify-content-end">
+        <button class="btn task-btn btn-outline-success">
+          <i class="fas fa-check"></i>
+        </button>
+        <button class="btn task-btn btn-outline-danger ml-2">
+          <i class="fas fa-trash"></i>
+        </button>
       </div>
     </div>
 
@@ -36,7 +41,7 @@
       id="collapseOne"
       class="collapse"
       aria-labelledby="headingOne"
-      data-parent="#accordionExample"
+      data-parent="#accordion"
     >
       <div>
         Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
@@ -52,23 +57,49 @@
     </div>
   </div>
 
-  <div>
-    <div
-      data-toggle="collapse"
-      data-target="#collapseTwo"
-      aria-expanded="false"
-      aria-controls="collapseTwo"
-      id="headingTwo"
-    >
-      <span></span>
-      <span></span>
-      <span></span>
+  <div class="task-item">
+    <div class="task-header row mb-2">
+      <div
+        class="task-main-data col-10 d-flex align-items-center"
+        data-toggle="collapse"
+        data-target="#collapseTwo"
+        aria-expanded="false"
+        aria-controls="collapseTwo"
+        id="headingTwo"
+      >
+        <div class="task-data-time pr-2 mr-2">
+          <span>Day</span>
+          <span>Data</span>
+        </div>
+        <div class="task-title mr-2">
+          TaskTitle
+        </div>
+        <div class="d-flex">
+          <div class="px-0 task-weather-icon">
+            <img
+              class="task-weather-icon-img"
+              src="http://openweathermap.org/img/wn/01d@2x.png"
+              alt=""
+            />
+          </div>
+          <div class="task-weather-temp px-0">20 &#8451;</div>
+        </div>
+      </div>
+      <div class="col-2 d-flex align-items-center justify-content-end">
+        <button class="btn task-btn btn-outline-success">
+          <i class="fas fa-check"></i>
+        </button>
+        <button class="btn task-btn btn-outline-danger ml-2">
+          <i class="fas fa-trash"></i>
+        </button>
+      </div>
     </div>
+
     <div
       id="collapseTwo"
       class="collapse"
       aria-labelledby="headingTwo"
-      data-parent="#accordionExample"
+      data-parent="#accordion"
     >
       <div>
         Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus

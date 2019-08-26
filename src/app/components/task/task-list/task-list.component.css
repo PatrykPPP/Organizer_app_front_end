@@ -1,13 +1,21 @@
-.task-header{
-  height: 45px;
+.task-item{
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-.task-header:last-of-type{
-   border-bottom: 1px solid rgba(0, 0, 0, 0);
+.task-item:last-of-type{
+  border-bottom: 1px solid rgba(0, 0, 0, 0);
 }
 
-.task-data-and-title{
+.task-header{
+  height: 55px;
+}
+
+.task-data-time{
+  font-size: 0.8rem;
+  border-right: 1px solid rgba(0, 0, 0, 0.5);
+}
+
+.task-main-data{
   cursor: pointer;
 }
 
@@ -23,3 +31,4 @@
 .task-weather-temp{
   padding: 10px 0;
 }
+
