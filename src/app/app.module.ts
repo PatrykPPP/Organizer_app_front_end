@@ -8,6 +8,7 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { TaskComponent } from './components/task/task.component';
 import { TaskAddComponent } from './components/task/task-add/task-add.component';
 import { TaskListComponent } from './components/task/task-list/task-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TaskListComponent } from './components/task/task-list/task-list.compone
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

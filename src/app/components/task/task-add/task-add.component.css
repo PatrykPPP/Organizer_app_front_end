@@ -19,22 +19,6 @@
     background-color: rgba(255, 255, 255, 0.6);
 }
 
-.popup-task-add-container{
-    margin: 100px auto 0 auto;
-    max-width: 600px;
-}
-
-.popup-x{
-	display: flex;
-	justify-content: flex-end;
-}
-
-.popup-x-btn{
-	color: rgb(175, 175, 175);
-	font-size: 1.3rem;
-	cursor: pointer;
-}
-
 .popup-task-add-form{
     max-width: 570px;
     margin: 0 auto;
