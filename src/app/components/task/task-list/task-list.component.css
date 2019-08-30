@@ -5,30 +5,3 @@
 .task-item:last-of-type{
   border-bottom: 1px solid rgba(0, 0, 0, 0);
 }
-
-.task-header{
-  height: 55px;
-}
-
-.task-data-time{
-  font-size: 0.7rem;
-  border-right: 1px solid rgba(0, 0, 0, 0.4);
-}
-
-.task-main-data{
-  cursor: pointer;
-}
-
-.task-weather-icon{
-  height: 40px;
-}
-
-.task-weather-icon-img{
-  height: 100%;
-  width: auto;
-}
-
-.task-weather-temp{
-  padding: 10px 0;
-}
-

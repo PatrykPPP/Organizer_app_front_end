@@ -9,6 +9,7 @@ import { TaskComponent } from './components/task/task.component';
 import { TaskAddComponent } from './components/task/task-add/task-add.component';
 import { TaskListComponent } from './components/task/task-list/task-list.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TaskItemComponent } from './components/task/task-item/task-item.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     FooterComponent,
     TaskComponent,
     TaskAddComponent,
-    TaskListComponent
+    TaskListComponent,
+    TaskItemComponent
   ],
   imports: [
     BrowserModule,

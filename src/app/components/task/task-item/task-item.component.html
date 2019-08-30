@@ -1,0 +1,57 @@
+<div class="task-header row ">
+  <div
+    class="task-main-data col-10 row d-flex align-items-center"
+    data-toggle="collapse"
+    [attr.data-target]="'#collapse' + index"
+    aria-expanded="false"
+    [attr.aria-controls]="'collapse' + index"
+    [attr.id]="'heading' + index"
+  >
+    <div class="task-data-time col-2 d-flex flex-column">
+      <span class="text-center">{{ task.localDateTime | date: "EEEE" }}</span>
+      <span class="text-center">{{
+        task.localDateTime | date: "d MMM y"
+      }}</span>
+    </div>
+
+    <div class="col-10 d-flex align-items-center">
+
+      <div class="task-title mr-2">
+        {{ task.title }}
+      </div>
+
+      <div class="px-0 task-weather-icon">
+        <img
+          class="task-weather-icon-img"
+          src="http://openweathermap.org/img/wn/10d@2x.png"
+          alt=""
+        />
+      </div>
+
+      <div class="task-weather-temp px-0">
+        21 &#8451;
+      </div>
+
+    </div>
+
+  </div>
+  <div class="col-2 d-flex align-items-center justify-content-end">
+    <button class="btn task-btn btn-outline-success">
+      <i class="fas fa-check"></i>
+    </button>
+    <button class="btn task-btn btn-outline-danger ml-2">
+      <i class="fas fa-trash"></i>
+    </button>
+  </div>
+</div>
+
+<div
+  [attr.id]="'collapse' + index"
+  class="collapse"
+  [attr.aria-labelledby]="'heading' + index"
+  data-parent="#accordion"
+>
+  <div class="task-description pl-3 pb-2">
+    {{ task.description }}
+  </div>
+</div>
