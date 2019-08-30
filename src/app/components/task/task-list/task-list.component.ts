@@ -19,7 +19,7 @@ export class TaskListComponent implements OnInit {
   }
 
   refreshTodosList() {
-    this.todoService.findAllTasks().subscribe(
+    this.todoService.findAllTasks(true).subscribe(
       response => {
         this.tasks = response;
         console.log(this.tasks);

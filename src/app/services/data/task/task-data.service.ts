@@ -29,8 +29,8 @@ export class TaskDataService {
     private http: HttpClient
   ) { }
 
-  findAllTasks() {
-    return this.http.get<Task[]>('http://localhost:8080/api/tasks');
+  findAllTasks(isCompleted: boolean) {
+    return this.http.get<Task[]>(`http://localhost:8080/api/tasks?isCompleted=${isCompleted}`);
   }
 
   findTask(id: number) {
