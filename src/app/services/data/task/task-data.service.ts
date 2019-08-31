@@ -1,23 +1,30 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-export class Task {
+@Injectable({
+  providedIn: 'root'
+})
+export class Weather {
+
+  public tempInC: number;
+  public weatherIcon: string;
 
   constructor(
-    public id: number,
-    public title: string,
-    public description: string,
-    public localDateTime: Date,
-    public weather: Weather
   ) { }
 }
 
-export class Weather {
+@Injectable({
+  providedIn: 'root'
+})
+export class Task {
+
+  public id: number;
+  public title: string;
+  public description: string;
+  public localDateTime: Date;
 
   constructor(
-    public tempInC: number,
-    public weatherIcon: string
-  ) { }
+    public weather: Weather) { }
 }
 
 @Injectable({

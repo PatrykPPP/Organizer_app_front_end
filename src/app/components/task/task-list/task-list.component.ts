@@ -12,6 +12,6 @@ export class TaskListComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
 }
