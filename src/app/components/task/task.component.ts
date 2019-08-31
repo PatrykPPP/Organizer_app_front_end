@@ -29,4 +29,16 @@ export class TaskComponent implements OnInit {
     );
   }
 
+  addTask(task: Task) {
+    this.taskService.createTask(task).subscribe(
+      response => {
+        console.log(response);
+        this.findAllTasks();
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
+
 }

@@ -47,4 +47,8 @@ export class TaskDataService {
   findTaskById(id: number) {
     return this.http.get<Task>(`http://localhost:8080/api/tasks/${id}`);
   }
+
+  createTask(task: Task) {
+    return this.http.post(`http://localhost:8080/api/tasks`, task);
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Task } from 'src/app/services/data/task/task-data.service';
 
 @Component({
@@ -8,6 +8,8 @@ import { Task } from 'src/app/services/data/task/task-data.service';
 })
 export class TaskAddComponent implements OnInit {
 
+  @Output() emitAddTask = new EventEmitter<Task>();
+
   constructor(
     public task: Task
   ) { }
@@ -16,7 +18,6 @@ export class TaskAddComponent implements OnInit {
   }
 
   addTask() {
-    console.log(this.task);
+    this.emitAddTask.emit(this.task);
   }
-
 }
