@@ -20,16 +20,16 @@
         {{ task.title }}
       </div>
 
-      <div class="px-0 task-weather-icon">
+      <div *ngIf="task.weather" class="px-0 task-weather-icon">
         <img
           class="task-weather-icon-img"
-          src="http://openweathermap.org/img/wn/10d@2x.png"
+          [attr.src]="task.weather.weatherIcon"
           alt=""
         />
       </div>
 
-      <div class="task-weather-temp px-0">
-        21 &#8451;
+      <div *ngIf="task.weather" class="task-weather-temp px-0">
+        {{task.weather.tempInC}} &#8451;
       </div>
 
     </div>

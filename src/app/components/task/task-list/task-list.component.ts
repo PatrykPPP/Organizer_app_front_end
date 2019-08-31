@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Task, TaskDataService } from 'src/app/services/data/task/task-data.service';
 
 @Component({
@@ -8,26 +8,10 @@ import { Task, TaskDataService } from 'src/app/services/data/task/task-data.serv
 })
 export class TaskListComponent implements OnInit {
 
-  tasks: Task[];
+  @Input() tasks: Task[];
 
-  constructor(
-    private todoService: TaskDataService
-  ) { }
+  constructor() { }
 
-  ngOnInit() {
-    this.refreshTodosList();
-  }
-
-  refreshTodosList() {
-    this.todoService.findAllTasks(true).subscribe(
-      response => {
-        this.tasks = response;
-        console.log(this.tasks);
-      },
-      error => {
-        console.log(error);
-      }
-    );
-  }
+  ngOnInit() {}
 
 }

@@ -29,11 +29,15 @@ export class TaskDataService {
     private http: HttpClient
   ) { }
 
-  findAllTasks(isCompleted: boolean) {
+  findAllTasks() {
+    return this.http.get<Task[]>(`http://localhost:8080/api/tasks`);
+  }
+
+  findByCompleted(isCompleted: boolean) {
     return this.http.get<Task[]>(`http://localhost:8080/api/tasks?isCompleted=${isCompleted}`);
   }
 
-  findTask(id: number) {
+  findTaskById(id: number) {
     return this.http.get<Task>(`http://localhost:8080/api/tasks/${id}`);
   }
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Task, TaskDataService } from 'src/app/services/data/task/task-data.service';
 
 @Component({
   selector: 'app-task',
@@ -7,9 +8,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskComponent implements OnInit {
 
-  constructor() { }
+  tasks: Task[];
+
+  constructor(
+    private taskService: TaskDataService
+  ) { }
 
   ngOnInit() {
+    this.findAllTasks();
+  }
+
+  findAllTasks() {
+    this.taskService.findByCompleted(false).subscribe(
+      response => {
+        this.tasks = response;
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 
 }
