@@ -41,7 +41,7 @@ export class TaskDataService {
   }
 
   findByCompleted(isCompleted: boolean) {
-    return this.http.get<Task[]>(`http://localhost:8080/api/tasks?isCompleted=${isCompleted}`);
+    return this.http.get<Task[]>(`http://localhost:8080/api/tasks?isCompleted=${isCompleted}&sort=localDateTime`);
   }
 
   findTaskById(id: number) {

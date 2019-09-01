@@ -3,12 +3,16 @@
 }
 
 .task-data-time{
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   border-right: 1px solid rgba(0, 0, 0, 0.4);
 }
 
 .task-main-data{
   cursor: pointer;
+}
+
+.task-time{
+  font-size: 0.6rem;
 }
 
 .task-weather-icon{
