@@ -1,5 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Task } from 'src/app/shared/models/task/task';
+declare var $: any;
 
 @Component({
   selector: 'app-task-add',
@@ -10,6 +11,8 @@ export class TaskAddComponent implements OnInit {
 
   @Output() emitAddTask = new EventEmitter<Task>();
 
+  public isAddError = false;
+
   constructor(
     public task: Task
   ) { }
@@ -19,5 +22,14 @@ export class TaskAddComponent implements OnInit {
 
   addTask() {
     this.emitAddTask.emit(this.task);
+  }
+
+  closeModal() {
+    $('#task-add-form').modal('hide');
+    this.isAddError = true;
+  }
+
+  showErrorMsg() {
+    this.isAddError = true;
   }
 }

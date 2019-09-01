@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {TaskDataService } from 'src/app/services/data/task/task-data.service';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { TaskDataService } from 'src/app/services/data/task/task-data.service';
 import { Task } from 'src/app/shared/models/task/task';
+import { TaskAddComponent } from './task-add/task-add.component';
 
 @Component({
   selector: 'app-task',
@@ -8,6 +9,9 @@ import { Task } from 'src/app/shared/models/task/task';
   styleUrls: ['./task.component.css']
 })
 export class TaskComponent implements OnInit {
+
+  @ViewChild(TaskAddComponent, { static: false })
+  private taskAddComponent: TaskAddComponent;
 
   tasks: Task[];
 
@@ -33,7 +37,7 @@ export class TaskComponent implements OnInit {
   addTask(task: Task) {
     this.taskService.createTask(task).subscribe(
       response => {
-        console.log(response);
+        this.taskAddComponent.closeModal();
         this.findAllTasks();
       },
       error => {
