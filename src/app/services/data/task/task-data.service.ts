@@ -1,31 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
-@Injectable({
-  providedIn: 'root'
-})
-export class Weather {
-
-  public tempInC: number;
-  public weatherIcon: string;
-
-  constructor(
-  ) { }
-}
-
-@Injectable({
-  providedIn: 'root'
-})
-export class Task {
-
-  public id: number;
-  public title: string;
-  public description: string;
-  public localDateTime: Date;
-
-  constructor(
-    public weather: Weather) { }
-}
+import { Task } from 'src/app/shared/models/task/task';
 
 @Injectable({
   providedIn: 'root'
