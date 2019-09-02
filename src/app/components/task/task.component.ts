@@ -53,10 +53,11 @@ export class TaskComponent implements OnInit {
 
   setTaskCompleted(id: number) {
     this.taskService.setTaskCompleted(id).then(
-      function(value: Observable<any>) {
+      (value: Observable<any>) => {
         value.subscribe(
           response => {
-            console.log('good');
+          },
+          error => {
           }
         );
       }
