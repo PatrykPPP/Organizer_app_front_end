@@ -1,5 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
-import {TaskDataService } from 'src/app/services/data/task/task-data.service';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { Task } from 'src/app/shared/models/task/task';
 
 @Component({
@@ -11,9 +10,20 @@ export class TaskListComponent implements OnInit {
 
   @Input() tasks: Task[];
 
+  @Output() emitSetTaskCompleted = new EventEmitter<number>();
+  @Output() emitDeleteTask = new EventEmitter<number>();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  setTaskCompleted(id: number) {
+    this.emitSetTaskCompleted.emit(id);
+  }
+
+  deleteTask(id: number) {
+    this.emitDeleteTask.emit(id);
   }
 
 }

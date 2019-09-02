@@ -1,7 +1,7 @@
 <div class="accordion mt-2" id="accordion">
   <ng-container *ngFor="let task of tasks; index as index">
     <div class="task-item mb-1">
-      <app-task-item [task]="task" [index]="index"></app-task-item>
+      <app-task-item [task]="task" [index]="index" (emitSetTaskCompleted)="setTaskCompleted($event)" (emitDeleteTask)="deleteTask($event)"></app-task-item>
     </div>
   </ng-container>
 </div>

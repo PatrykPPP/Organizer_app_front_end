@@ -27,10 +27,6 @@
     box-shadow: 0px 0px 10px 0.5px #cfcfcf;
 }
 
-.task-add-error-message{
-  display: block;
-}
-
 .task-add-form-row{
     margin-bottom: 5px;
 }

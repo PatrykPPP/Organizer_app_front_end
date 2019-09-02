@@ -26,4 +26,29 @@ export class TaskDataService {
   createTask(task: Task) {
     return this.http.post(`http://localhost:8080/api/tasks`, task);
   }
+
+  setTaskCompleted(taskId: number) {
+
+    const promise = new Promise((resolve, reject) => {
+      let task: Task;
+
+      this.findTaskById(taskId).subscribe(
+        response => {
+          task = response;
+          task.completed = true;
+          resolve(this.http.put('http://localhost:8080/api/tasks', task));
+        },
+        error => {
+          console.log(error);
+        }
+      );
+
+    });
+
+    return promise;
+  }
+
+  deleteTask(taskId: number) {
+    return this.http.delete(`http://localhost:8080/api/tasks/${taskId}`);
+  }
 }
