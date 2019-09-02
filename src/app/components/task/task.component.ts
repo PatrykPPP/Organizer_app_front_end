@@ -66,11 +66,9 @@ export class TaskComponent implements OnInit {
   deleteTask(id: number) {
     this.taskService.deleteTask(id).subscribe(
       response => {
-        console.log(response);
         this.findAllTasks();
       },
       error => {
-        console.log(error);
       }
     );
   }
