@@ -11,7 +11,7 @@ export class TaskAddComponent implements OnInit {
 
   @Output() emitAddTask = new EventEmitter<Task>();
 
-  public isAddError = false;
+  isAddError = false;
 
   constructor(
     public task: Task
@@ -26,7 +26,10 @@ export class TaskAddComponent implements OnInit {
 
   closeModal() {
     $('#task-add-form').modal('hide');
-    this.isAddError = true;
+    this.isAddError = false;
+    this.task.title = '';
+    this.task.localDateTime = new Date();
+    this.task.description = '';
   }
 
   showErrorMsg() {

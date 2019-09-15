@@ -39,7 +39,6 @@ export class TaskDataService {
           resolve(this.http.put('http://localhost:8080/api/tasks', task));
         },
         error => {
-          console.log(error);
         }
       );
 

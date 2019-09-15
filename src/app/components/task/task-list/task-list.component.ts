@@ -13,6 +13,8 @@ export class TaskListComponent implements OnInit {
   @Output() emitSetTaskCompleted = new EventEmitter<number>();
   @Output() emitDeleteTask = new EventEmitter<number>();
 
+  private isCompletedTasks = true;
+
   constructor() { }
 
   ngOnInit() {
@@ -24,6 +26,14 @@ export class TaskListComponent implements OnInit {
 
   deleteTask(id: number) {
     this.emitDeleteTask.emit(id);
+  }
+
+  showMsgNoCompletedTasks() {
+    this.isCompletedTasks = false;
+  }
+
+  hideMsgNoCompletedTasks(){
+    this.isCompletedTasks = true;
   }
 
 }

@@ -4,6 +4,7 @@ import { Task } from 'src/app/shared/models/task/task';
 import { TaskAddComponent } from './task-add/task-add.component';
 import { TaskListComponent } from './task-list/task-list.component';
 import { Observable } from 'rxjs';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-task',
@@ -32,9 +33,11 @@ export class TaskComponent implements OnInit {
     this.taskService.findByCompleted(false).subscribe(
       response => {
         this.tasks = response;
+        this.taskListComponent.hideMsgNoCompletedTasks();
       },
       error => {
-        console.log(error);
+        this.tasks = null;
+        this.taskListComponent.showMsgNoCompletedTasks();
       }
     );
   }
