@@ -32,7 +32,7 @@ export class TaskListComponent implements OnInit {
     this.isCompletedTasks = false;
   }
 
-  hideMsgNoCompletedTasks(){
+  hideMsgNoCompletedTasks() {
     this.isCompletedTasks = true;
   }
 
