@@ -29,22 +29,15 @@ export class TaskDataService {
 
   setTaskCompleted(taskId: number) {
 
-    const promise = new Promise((resolve, reject) => {
-      let task: Task;
+    class TaskUpdate {
+      isCompleted: boolean;
+      constructor() { }
+    }
 
-      this.findTaskById(taskId).subscribe(
-        response => {
-          task = response;
-          task.completed = true;
-          resolve(this.http.put('http://localhost:8080/api/tasks', task));
-        },
-        error => {
-        }
-      );
+    const task = new TaskUpdate();
+    task.isCompleted = true;
 
-    });
-
-    return promise;
+    return this.http.patch(`http://localhost:8080/api/tasks/${taskId}`, task);
   }
 
   deleteTask(taskId: number) {

@@ -55,14 +55,11 @@ export class TaskComponent implements OnInit {
   }
 
   setTaskCompleted(id: number) {
-    this.taskService.setTaskCompleted(id).then(
-      (value: Observable<any>) => {
-        value.subscribe(
-          response => {
-          },
-          error => {
-          }
-        );
+    this.taskService.setTaskCompleted(id).subscribe(
+      response => {
+        this.findAllTasks();
+      },
+      error => {
       }
     );
   }
