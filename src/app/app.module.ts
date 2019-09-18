@@ -11,6 +11,7 @@ import { TaskAddComponent } from './components/task/task-add/task-add.component'
 import { TaskListComponent } from './components/task/task-list/task-list.component';
 import { HttpClientModule } from '@angular/common/http';
 import { TaskItemComponent } from './components/task/task-item/task-item.component';
+import { LoginFormComponent } from './components/login-form/login-form.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { TaskItemComponent } from './components/task/task-item/task-item.compone
     TaskComponent,
     TaskAddComponent,
     TaskListComponent,
-    TaskItemComponent
+    TaskItemComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
