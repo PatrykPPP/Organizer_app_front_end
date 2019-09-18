@@ -9,9 +9,10 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { TaskComponent } from './components/task/task.component';
 import { TaskAddComponent } from './components/task/task-add/task-add.component';
 import { TaskListComponent } from './components/task/task-list/task-list.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TaskItemComponent } from './components/task/task-item/task-item.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
+import { HttpInterceptorService } from './services/http/http-interceptor/http-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,9 @@ import { LoginFormComponent } from './components/login-form/login-form.component
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorService, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
