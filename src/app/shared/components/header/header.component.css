@@ -9,3 +9,7 @@
 .fa-bars-white{
   color: #fff;
 }
+
+.nav-logout{
+  cursor: pointer;
+}

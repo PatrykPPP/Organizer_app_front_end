@@ -15,7 +15,7 @@
         <span><i class="fas fa-bars text-light"></i></span>
       </button>
 
-      <div class="collapse navbar-collapse font-weight-bold" id="navbarText">
+      <div *ngIf="isUserLoggedIn()" class="collapse navbar-collapse font-weight-bold" id="navbarText">
         <ul class="navbar-nav  mr-auto">
           <li class="nav-item active">
             <a class="nav-link" href="#">Tasks</a>
@@ -28,9 +28,9 @@
           </li>
         </ul>
 
-        <ul class="navbar-nav">
+        <ul *ngIf="isUserLoggedIn()" class="navbar-nav">
           <li class="nav-item active">
-            <a class="nav-link" href="#"><i class="fas fa-power-off"></i> Logout</a>
+            <a class="nav-link nav-logout" (click)="logout()"><i class="fas fa-power-off"></i> Logout</a>
           </li>
         </ul>
 

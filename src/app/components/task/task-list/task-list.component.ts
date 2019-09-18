@@ -13,7 +13,7 @@ export class TaskListComponent implements OnInit {
   @Output() emitSetTaskCompleted = new EventEmitter<number>();
   @Output() emitDeleteTask = new EventEmitter<number>();
 
-  private isCompletedTasks = true;
+  public isCompletedTasks = true;
 
   constructor() { }
 
