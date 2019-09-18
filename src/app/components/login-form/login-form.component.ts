@@ -22,12 +22,15 @@ export class LoginFormComponent implements OnInit {
   }
 
   handleLogin() {
-    if (this.userAuthenticationService.authenticate(this.user.userName, this.user.password)) {
-      this.router.navigate(['tasks']);
-      this.invalidLogin = false;
-      console.log('handleLogin');
-    } else {
-      this.invalidLogin = true;
-    }
+    this.userAuthenticationService.executeAuthentication(this.user.userName, this.user.password).subscribe(
+      data => {
+        this.router.navigate(['tasks']);
+        this.invalidLogin = false;
+      },
+      error => {
+        console.log(error);
+        this.invalidLogin = true;
+      }
+    );
   }
 }

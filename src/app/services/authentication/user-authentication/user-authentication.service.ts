@@ -1,18 +1,44 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserAuthenticationService {
 
-  constructor() { }
+  constructor(
+    private http: HttpClient
+  ) { }
 
-  authenticate(username: string, password: string) {
-    if (username === 'Peter' && password === '123') {
-      sessionStorage.setItem('authenticatedUser', username);
-      return true;
-    } else {
-      return false;
+  executeAuthentication(username: string, password: string) {
+
+    const authHeaderString = 'Basic' + window.btoa(username + ':' + password);
+
+    const headers = new HttpHeaders({
+      Authorization: authHeaderString
+    });
+
+    return this.http.get<any>(
+      `http://localhost:8080/authentication`,
+      { headers }).pipe(
+        map(
+          data => {
+            sessionStorage.setItem('authenticatedUser', username);
+            sessionStorage.setItem('token', authHeaderString);
+            return data;
+          }
+        )
+      );
+  }
+
+  getAuthenticatedUser() {
+    return sessionStorage.getItem('authenticatedUser');
+  }
+
+  getAuthenticatedToken() {
+    if (this.getAuthenticatedUser()) {
+      return sessionStorage.getItem('token');
     }
   }
 
@@ -23,5 +49,6 @@ export class UserAuthenticationService {
 
   logout() {
     sessionStorage.removeItem('authenticatedUser');
+    sessionStorage.removeItem('token');
   }
 }
