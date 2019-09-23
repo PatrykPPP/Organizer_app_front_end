@@ -1,4 +1,4 @@
-<form (ngSubmit)="handleLogin()" #loginForm="ngForm" class="login-form">
+<form (ngSubmit)="handleLogin()" #loginForm="ngForm" class="login-form shadow px-5 py-3 rounded-lg">
   <h2 class="login-header">Login</h2>
   <div *ngIf="invalidLogin" class="alert alert-danger fade show" role="alert">
     Invalid username or password!
