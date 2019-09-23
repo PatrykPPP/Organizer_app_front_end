@@ -28,7 +28,6 @@ export class LoginFormComponent implements OnInit {
         this.invalidLogin = false;
       },
       error => {
-        console.log(error);
         this.invalidLogin = true;
       }
     );

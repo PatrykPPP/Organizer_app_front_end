@@ -13,14 +13,14 @@ export class UserAuthenticationService {
 
   executeAuthentication(username: string, password: string) {
 
-    const authHeaderString = 'Basic' + window.btoa(username + ':' + password);
+    const authHeaderString = 'Basic ' + window.btoa(username + ':' + password);
 
     const headers = new HttpHeaders({
       Authorization: authHeaderString
     });
 
-    return this.http.get<any>(
-      `http://localhost:8080/authentication`,
+    return this.http.get<AuthenticationMessage>(
+      `http://localhost:8080/api/authentication`,
       { headers }).pipe(
         map(
           data => {
@@ -51,4 +51,8 @@ export class UserAuthenticationService {
     sessionStorage.removeItem('authenticatedUser');
     sessionStorage.removeItem('token');
   }
+}
+
+export class AuthenticationMessage {
+  public message: string;
 }
