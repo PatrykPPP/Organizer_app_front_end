@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Task } from 'src/app/shared/models/task/task';
+import { ORGANIZER_API_URL } from 'src/app/app.constants';
 
 @Injectable({
   providedIn: 'root'
@@ -12,19 +13,19 @@ export class TaskDataService {
   ) { }
 
   findAllTasks() {
-    return this.http.get<Task[]>(`http://localhost:8080/api/tasks`);
+    return this.http.get<Task[]>(`${ORGANIZER_API_URL}/tasks`);
   }
 
   findByCompleted(isCompleted: boolean) {
-    return this.http.get<Task[]>(`http://localhost:8080/api/tasks?isCompleted=${isCompleted}&sort=localDateTime`);
+    return this.http.get<Task[]>(`${ORGANIZER_API_URL}/tasks?isCompleted=${isCompleted}&sort=localDateTime`);
   }
 
   findTaskById(id: number) {
-    return this.http.get<Task>(`http://localhost:8080/api/tasks/${id}`);
+    return this.http.get<Task>(`${ORGANIZER_API_URL}/tasks/${id}`);
   }
 
   createTask(task: Task) {
-    return this.http.post(`http://localhost:8080/api/tasks`, task);
+    return this.http.post(`${ORGANIZER_API_URL}/tasks`, task);
   }
 
   setTaskCompleted(taskId: number) {
@@ -37,10 +38,10 @@ export class TaskDataService {
     const task = new TaskUpdate();
     task.isCompleted = true;
 
-    return this.http.patch(`http://localhost:8080/api/tasks/${taskId}`, task);
+    return this.http.patch(`${ORGANIZER_API_URL}/tasks/${taskId}`, task);
   }
 
   deleteTask(taskId: number) {
-    return this.http.delete(`http://localhost:8080/api/tasks/${taskId}`);
+    return this.http.delete(`${ORGANIZER_API_URL}/tasks/${taskId}`);
   }
 }

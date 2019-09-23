@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { map } from 'rxjs/operators';
+import { ORGANIZER_API_URL } from 'src/app/app.constants';
+
+export const TOKEN = 'token';
+export const AUTHENTICATED_USER = 'authenticatedUser';
 
 @Injectable({
   providedIn: 'root'
@@ -20,12 +24,12 @@ export class UserAuthenticationService {
     });
 
     return this.http.get<AuthenticationMessage>(
-      `http://localhost:8080/api/authentication`,
-      { headers }).pipe(
+      `${ORGANIZER_API_URL}/authentication`,
+      {headers}).pipe(
         map(
           data => {
-            sessionStorage.setItem('authenticatedUser', username);
-            sessionStorage.setItem('token', authHeaderString);
+            sessionStorage.setItem(AUTHENTICATED_USER, username);
+            sessionStorage.setItem(TOKEN, authHeaderString);
             return data;
           }
         )
@@ -33,23 +37,23 @@ export class UserAuthenticationService {
   }
 
   getAuthenticatedUser() {
-    return sessionStorage.getItem('authenticatedUser');
+    return sessionStorage.getItem(AUTHENTICATED_USER);
   }
 
   getAuthenticatedToken() {
     if (this.getAuthenticatedUser()) {
-      return sessionStorage.getItem('token');
+      return sessionStorage.getItem(TOKEN);
     }
   }
 
   isUserLoggedIn() {
-    const user = sessionStorage.getItem('authenticatedUser');
+    const user = sessionStorage.getItem(AUTHENTICATED_USER);
     return !(user == null);
   }
 
   logout() {
-    sessionStorage.removeItem('authenticatedUser');
-    sessionStorage.removeItem('token');
+    sessionStorage.removeItem(AUTHENTICATED_USER);
+    sessionStorage.removeItem(TOKEN);
   }
 }
 
