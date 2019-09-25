@@ -32,4 +32,8 @@ export class LoginFormComponent implements OnInit {
       }
     );
   }
+
+  showRegistrationForm() {
+
+  }
 }
