@@ -34,6 +34,6 @@ export class LoginFormComponent implements OnInit {
   }
 
   showRegistrationForm() {
-
+    this.router.navigate(['registration']);
   }
 }

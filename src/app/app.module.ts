@@ -13,6 +13,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { TaskItemComponent } from './components/task/task-item/task-item.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { HttpInterceptorService } from './services/http/http-interceptor/http-interceptor.service';
+import { RegistrationFormComponent } from './components/registration-form/registration-form.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { HttpInterceptorService } from './services/http/http-interceptor/http-in
     TaskAddComponent,
     TaskListComponent,
     TaskItemComponent,
-    LoginFormComponent
+    LoginFormComponent,
+    RegistrationFormComponent
   ],
   imports: [
     BrowserModule,

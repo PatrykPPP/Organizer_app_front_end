@@ -1,6 +1,6 @@
-<form (ngSubmit)="handleLogin()" #loginForm="ngForm" class="login-form shadow px-5 py-3 rounded-lg">
-  <h2 class="login-header">Login</h2>
-  <div *ngIf="invalidLogin" class="alert alert-danger fade show" role="alert">
+<form (ngSubmit)="handleRegistration()" #loginForm="ngForm" class="registration-form shadow px-5 py-3 rounded-lg">
+  <h2 class="registration-header">Registration</h2>
+  <div *ngIf="false" class="alert alert-danger fade show" role="alert">
     Invalid username or password!
   </div>
   <div class="form-group row">
@@ -31,10 +31,7 @@
   </div>
   <div class="form-group mt-4 row">
     <div class="col-sm-12 d-flex justify-content-center">
-      <button type="submit" class="btn btn-primary w-75">Sign in</button>
-    </div>
-    <div class="col-sm-12 mt-2 d-flex justify-content-center">
-      <button (click)="showRegistrationForm()" type="button" class="btn btn-success w-75">Register</button>
+      <button type="submit" class="btn btn-success w-75">Register</button>
     </div>
   </div>
 </form>
